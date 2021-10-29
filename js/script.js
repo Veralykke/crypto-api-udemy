@@ -1,4 +1,4 @@
-//Old
+//Old XMLHttpRequest
 /*const req = new XMLHttpRequest();
 
 req.onload = function () {
@@ -15,8 +15,8 @@ req.onerror = function () {
 req.open("GET", "https://api.cryptonator.com/api/ticker/btc-usd");
 req.send();*/
 
-//New
-fetch("https://api.cryptonator.com/api/ticker/btc-usd")
+//NEW--FETCH
+/*fetch("https://api.cryptonator.com/api/ticker/btc-usd")
   .then((res) => {
     console.log("RESPONSE, WAITING TO PARSE", res);
     return res.json();
@@ -28,4 +28,16 @@ fetch("https://api.cryptonator.com/api/ticker/btc-usd")
   })
   .catch((e) => {
     console.log("OH NO! oh lordi", e);
-  });
+  });*/
+//NEW--FETCH WITH ASYNC TO IMPROVE, also with try,catch as error
+const fetchBitcoinPrice = async () => {
+  try {
+    const res = await fetch("https://api.cryptonator.com/api/ticker/btc-usd");
+    const data = await res.json();
+    console.log(data.ticker.price);
+  } catch (e) {
+    console.log("SOMETHING WENT WRONG", e);
+  }
+};
+
+//NEW BETTER--AXIOS
