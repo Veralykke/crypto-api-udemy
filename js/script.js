@@ -29,8 +29,9 @@ req.send();*/
   .catch((e) => {
     console.log("OH NO! oh lordi", e);
   });*/
-//NEW--FETCH WITH ASYNC TO IMPROVE, also with try,catch as error
-const fetchBitcoinPrice = async () => {
+
+//NEW--FETCH WITH ASYNC TO IMPROVE, also with (try,catch) as error
+/*const fetchBitcoinPrice = async () => {
   try {
     const res = await fetch("https://api.cryptonator.com/api/ticker/btc-usd");
     const data = await res.json();
@@ -38,6 +39,6 @@ const fetchBitcoinPrice = async () => {
   } catch (e) {
     console.log("SOMETHING WENT WRONG", e);
   }
-};
+};*/
 
-//NEW BETTER--AXIOS
+//NEW BETTER FETCHING--> AXIOS (library for making HTTP requests)
